@@ -82,9 +82,14 @@ nav{
   text-decoration:none;
   font-weight:500;
   position:relative;
-  padding-bottom:6px;
+  padding:8px 14px;   /* BUNU EKLE */
+  border-radius:999px; /* BUNU EKLE */
+  transition: background 0.25s ease, color 0.25s ease;
 }
-
+  .nav-links a:hover{
+  background: rgba(255,255,255,0.18);
+}
+  
 /* Menü animasyonu */
 .nav-links a::after{
   content:"";
@@ -1012,4 +1017,5 @@ window.addEventListener("load", () => {
 
 </body>
 </html>
+
 
