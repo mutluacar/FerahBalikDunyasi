@@ -972,15 +972,24 @@ function setActiveLink(activeId){
   });
 }
 
-function getCurrentSection(){
-  // header yüksekliği + küçük pay
-  const offset = 90;
+
+  function getCurrentSection(){
+  const offset = 120; // biraz artırdık
   const y = window.scrollY + offset;
 
   let current = "hero";
+
   for(const sec of sections){
-    if(sec && y >= sec.offsetTop) current = sec.id;
+    if(sec && y >= sec.offsetTop){
+      current = sec.id;
+    }
   }
+    
+  // En alta gelince contact'i zorla aktif yap
+  if((window.innerHeight + window.scrollY) >= document.body.offsetHeight - 5){
+    current = "contact";
+  }
+
   return current;
 }
 
@@ -1017,5 +1026,6 @@ window.addEventListener("load", () => {
 
 </body>
 </html>
+
 
 
